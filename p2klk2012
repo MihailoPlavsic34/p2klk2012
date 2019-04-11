@@ -1,0 +1,59 @@
+#include <stdio.h>
+#define MAX 100
+
+int main(){
+	int  p, i, n, a[MAX], b[MAX];
+	while (1) {
+		printf("Unesite broj elemenata niza(negativan broj za izlaz): \n");
+		scanf("%d", &n);
+		if (n < 0 || n > MAX) break;
+		printf("Unesite elemente niza A: ");
+		for (int i = 0; i < n; i++) {
+			scanf("%d", &a[i]);
+		}
+
+		printf("\n Unesite elemente niza B: ");
+		for (int i = 0; i < n; i++) {
+			scanf("%d", &b[i]);
+		}
+		printf("\n Niz A: ");
+		for (int i = 0; i < n; i++) {
+			printf(" <%d> ", a[i]);
+		}
+		printf("\n Niz B: ");
+		for (int i = 0; i < n; i++) {
+			printf(" <%d> ", b[i]);
+		}
+		printf("\n");
+		p = 0;
+provera:
+		for ( i = 0; i < n; i++) {
+			if (a[i] == b[i]) continue;
+			else break;
+		}
+		
+		if (i==n) printf("Niz A se dobija rotacijom niza B za %d mesta udesno! \n", p);
+		else {
+	
+			for (int i=(n-1),t; i > 0; i--) {
+				t = b[i];
+				b[i] = b[i-1];
+				b[i - 1] = t;				
+			}
+			++p;
+			if (p<=n) goto provera;
+			else printf("Niz A se ne moze dobiti rotacijom niza B!");
+		}
+		printf("\n");
+		for (int i = 0; i < 50; i++) {
+			printf("-");
+		}
+		printf("\n");
+		for (int i = 0; i < 50; i++) {
+			printf("-");
+		}
+		
+		printf("\n\n\n");
+	}
+
+}
