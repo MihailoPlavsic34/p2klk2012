@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 100
+
+
+int main() {
+	int n, g, a[MAX];
+	float r[MAX];
+	printf("Unesite broj gradova: \n");
+	scanf("%d", &n);
+	printf("Unesite broj godina za simulaciju: \n");
+	scanf("%d", g);
+	printf("Unesite broj stanovnika svakog grada: \n");
+	for (int i = 0; i < n; i++) {
+		scanf("%d", a[i]);
+	}
+	for (int i = 0; i < n; i++) {
+		r[i] = (rand() / ((double)RAND_MAX*(2/100)-1));
+	}
+	printf("Niz random procenata je: \n");
+	for (int i = 0; i < n; i++) {
+		printf(", %f", r[MAX]);
+	}
+
+
+}
